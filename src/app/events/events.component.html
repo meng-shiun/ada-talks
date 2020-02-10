@@ -1,1 +1,12 @@
-<p>events works!</p>
+<div *ngIf="events$ | async as events">
+  <div class="card mb-3" *ngFor="let event of events">
+    <div class="card-header">
+      {{ event?.title }}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ event?.description }}</p>
+      </blockquote>
+    </div>
+  </div>
+</div>
