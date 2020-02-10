@@ -17,13 +17,11 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppRoutingModule.components,
-    EventsComponent
+    AppRoutingModule.components
   ],
   imports: [
     BrowserModule,
