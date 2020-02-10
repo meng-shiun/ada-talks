@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-// NgRx Store & Effects
+// NgRx
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { AboutEffects } from './about/store/about.effects';
+import * as fromRoot from './store/app.store';
 
 // Imports for loading & configuring the in-memory web api
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -27,8 +29,8 @@ import { EventsComponent } from './events/events.component';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 0 }),
     CoreModule,
     AppRoutingModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([])
+    StoreModule.forRoot(fromRoot.reducers),
+    EffectsModule.forRoot([AboutEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

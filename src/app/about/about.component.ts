@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+
 import { IAbout } from '../shared/interfaces/about';
-import { AboutService } from './about.service';
+
+import * as fromRoot from '../store/app.store';
+import * as fromAbout from './store';
+import * as aboutActions from './store/about.actions';
 
 @Component({
   selector: 'app-about',
@@ -12,10 +17,12 @@ export class AboutComponent implements OnInit {
 
   allAbout$: Observable<IAbout[]>;
 
-  constructor(private aboutService: AboutService) { }
+  constructor(private store: Store<fromRoot.AppState>) {
+    this.store.dispatch(aboutActions.loadAllAbout());
+  }
 
   ngOnInit() {
-    this.allAbout$ = this.aboutService.getAllAbout();
+    this.allAbout$ = this.store.pipe(select(fromAbout.selectAllAbout));
   }
 
 }
