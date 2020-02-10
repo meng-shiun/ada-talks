@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IAbout } from '../shared/interfaces/about';
+import { AboutService } from './about.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  allAbout$: Observable<IAbout[]>;
+
+  constructor(private aboutService: AboutService) { }
 
   ngOnInit() {
+    this.allAbout$ = this.aboutService.getAllAbout();
   }
 
 }

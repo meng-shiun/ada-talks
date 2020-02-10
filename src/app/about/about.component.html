@@ -1,1 +1,12 @@
-<p>about works!</p>
+<div *ngIf="allAbout$ | async as aboutList">
+  <div class="card mb-3" *ngFor="let aboutItem of aboutList">
+    <div class="card-header">
+      {{ aboutItem?.title }}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ aboutItem?.description }}</p>
+      </blockquote>
+    </div>
+  </div>
+</div>
