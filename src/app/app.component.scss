@@ -1,6 +1,24 @@
-$primary-bg: #464ea1;
-$primary-white: #fff;
+$color-gray: #777;
 
 main {
-  padding: 2em;
+  padding: 15em 2em 2em;
+}
+
+footer {
+  color: $color-gray;
+
+  .container {
+    margin: 1em auto;
+    text-align: center;
+  }
+
+  img.logo-footer {
+    height: 3em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    padding: 24em 2em 2em;
+  }
 }

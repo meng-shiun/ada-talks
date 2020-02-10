@@ -4,6 +4,8 @@ $color-white: #fff;
 
 header {
   width: 100%;
+  position: fixed;
+  z-index: 1;
 
   .logo {
     padding: 1em;
@@ -14,6 +16,8 @@ header {
     padding: .5em;
     border-bottom: 1px solid $primary-bg;
     text-align: right;
+    background: $color-white;
+
     a {
       width: 10em;
       margin: 0 .5em;
