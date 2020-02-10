@@ -28,7 +28,7 @@ const aboutReducer = createReducer(
   })),
   on(AboutActions.loadAllAboutFail, (state, { error }) => ({
     ...state,
-    aboutList: null,
+    aboutList: [],
     error,
     loaded: false
   }))
