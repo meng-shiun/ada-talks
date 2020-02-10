@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ISpeaker } from '../shared/interfaces/speaker';
+import { SpeakerService } from './speaker.service';
 
 @Component({
   selector: 'app-speakers',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpeakersComponent implements OnInit {
 
-  constructor() { }
+  speakers$: Observable<ISpeaker[]>;
+
+  constructor(private speakerService: SpeakerService) { }
 
   ngOnInit() {
+    this.speakers$ = this.speakerService.getSpeakers();
   }
 
 }

@@ -1,1 +1,12 @@
-<p>speakers works!</p>
+<div *ngIf="speakers$ | async as speakers">
+  <div class="card mb-3" *ngFor="let speaker of speakers">
+    <div class="card-header">
+      {{ speaker?.name }}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ speaker?.info }}</p>
+      </blockquote>
+    </div>
+  </div>
+</div>
