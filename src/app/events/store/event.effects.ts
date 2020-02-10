@@ -10,7 +10,7 @@ import { IEvent } from 'src/app/shared/interfaces/event';
 
 @Injectable()
 export class EventEffects {
-  loadAllAbout$ = createEffect(
+  loadAllEvents$ = createEffect(
     () => this.actions$.pipe(
       ofType(EventActions.loadEvents),
       switchMap(action => this.eventService.getEvents()

@@ -10,7 +10,7 @@ import { ISpeaker } from 'src/app/shared/interfaces/speaker';
 
 @Injectable()
 export class SpeakerEffects {
-  loadAllAbout$ = createEffect(
+  loadAllSpeakers$ = createEffect(
     () => this.actions$.pipe(
       ofType(SpeakerActions.loadSpeakers),
       switchMap(action => this.speakerService.getSpeakers()
