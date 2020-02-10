@@ -1,0 +1,22 @@
+$primary-bg: #464ea1;
+$primary-bg-light: #c7cae6;
+$color-white: #fff;
+
+header {
+  width: 100%;
+
+  .logo {
+    padding: 1em;
+    background: $primary-bg;
+  }
+
+  nav {
+    padding: .5em;
+    border-bottom: 1px solid $primary-bg;
+    text-align: right;
+    a {
+      width: 10em;
+      margin: 0 .5em;
+    }
+  }
+}
