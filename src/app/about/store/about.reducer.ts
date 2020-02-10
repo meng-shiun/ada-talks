@@ -12,7 +12,7 @@ export interface AboutState {
 
 /* Setting the initial state */
 export const initialState: AboutState = {
-  aboutList: [],
+  aboutList: null,
   error: '',
   loaded: false
 };
@@ -28,7 +28,7 @@ const aboutReducer = createReducer(
   })),
   on(AboutActions.loadAllAboutFail, (state, { error }) => ({
     ...state,
-    aboutList: [],
+    aboutList: null,
     error,
     loaded: false
   }))

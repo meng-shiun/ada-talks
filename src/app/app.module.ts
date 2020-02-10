@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AboutEffects } from './about/store/about.effects';
+import { SpeakerEffects } from './speakers/store/speaker.effects';
 import * as fromRoot from './store/app.store';
 
 // Imports for loading & configuring the in-memory web api
@@ -30,7 +31,10 @@ import { EventsComponent } from './events/events.component';
     CoreModule,
     AppRoutingModule,
     StoreModule.forRoot(fromRoot.reducers),
-    EffectsModule.forRoot([AboutEffects])
+    EffectsModule.forRoot([
+      AboutEffects,
+      SpeakerEffects
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
